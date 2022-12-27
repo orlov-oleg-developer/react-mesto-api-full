@@ -1,0 +1,19 @@
+.root {
+  max-width: 880px;
+  min-width: 320px;
+  margin: 0 auto;
+
+  color: white;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  background-color: #000000;
+
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}

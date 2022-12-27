@@ -1,0 +1,11 @@
+.footer {
+  width: 880px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media screen and (max-width:880px) {
+  .footer {
+    width: 100%;
+  }
+}

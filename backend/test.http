@@ -1,0 +1,103 @@
+POST http://localhost:3000/signup
+Content-Type: application/json
+
+{
+  "email": "123s4@yandex.ru",
+  "password": "123456789"
+}
+
+###
+
+POST http://localhost:3000/signin
+Content-Type: application/json
+
+{
+  "email": "123456@yandex.ru",
+  "password": "test"
+}
+
+###
+
+GET http://localhost:3000/users
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2FhZDJhY2YzNzU0YzNkM2Y5ODcyOTMiLCJpYXQiOjE2NzIxMzk4NTEsImV4cCI6MTY3Mjc0NDY1MX0.wr4EpqXqtwa-fN_ybFbwhGYdAlL3LW4CQebJ2E6ZpcA
+###
+
+GET http://localhost:3000/users/me
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2FhZDJhY2YzNzU0YzNkM2Y5ODcyOTMiLCJpYXQiOjE2NzIxNDQxNTAsImV4cCI6MTY3Mjc0ODk1MH0.EVvC5phjkiTEw1hkO_swg2Us76dax4VeOEaICkCme4M
+
+###
+
+GET http://localhost:3000/users/639d7110cd3726d0862a0f0e
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzliMTEyM2RhN2Y0ZTM5MWQyYThiMzEiLCJpYXQiOjE2NzExMDY4NTMsImV4cCI6MTY3MTcxMTY1M30.JQ9iVOKUwewHaNOaJtFWMaD_7tYC4DPN4_oBThKt8bQ
+###
+
+PATCH http://localhost:3000/users/me
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk4YzQ0ZDJhMTE2M2VkZWQwOTFlZDciLCJpYXQiOjE2NzA5NTk0MTAsImV4cCI6MTY3MTU2NDIxMH0.u-BNbVV7z_F2OOjCbF4BvplmkDYqD7ktcn5qSkrY5ho
+
+{
+  "name": "О",
+  "about": "Разработчик"
+}
+
+###
+
+PATCH http://localhost:3000/users/me/avatar
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk4YmRhMTkzYzU4MGZmMjEyMmNlOGYiLCJpYXQiOjE2NzA5NTQ2MDcsImV4cCI6MTY3MTU1OTQwN30.FgVwygWgF2gxz6ZW5qvkvb5IejFStn93PzC0JZfKuoE
+
+{
+  "avatar": "https://luxe-host.ru/wp-content/uploads/d/7/9/d7945aedae32bc4faa05246797a0adbb.jpeg"
+}
+
+###
+
+
+GET http://localhost:3000/cards
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzljODU3ZjU5MDRlYTQxMDdmOWRkYzUiLCJpYXQiOjE2NzEzODY1MTYsImV4cCI6MTY3MTk5MTMxNn0.acqTS9GZmxy5ZP8VdU17p5mO-knTN8ogPlqKCAxzdP4
+
+###
+
+POST http://localhost:3000/cards
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzljODU3ZjU5MDRlYTQxMDdmOWRkYzUiLCJpYXQiOjE2NzEzODk3MTQsImV4cCI6MTY3MTk5NDUxNH0.4q__A536ay7_6VzwM-gZousd7Pw5eQ-WNeNqD9vNY8A
+
+{
+  "name": "Собакен",
+  "link": "https://adonius.club/uploads/posts/2022-06/1656579731_52-adonius-club-p-smes-korgi-i-siba-inu-sobaki-krasivo-foto-53.jpg"
+}
+
+###
+
+DELETE http://localhost:3000/cards/639f627504812e4f4946f9a9
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzljODU3ZjU5MDRlYTQxMDdmOWRkYzUiLCJpYXQiOjE2NzEzODY1MTYsImV4cCI6MTY3MTk5MTMxNn0.acqTS9GZmxy5ZP8VdU17p5mO-knTN8ogPlqKCAxzdP4
+###
+
+PUT http://localhost:3000/cards/63a20a8a7a495f617252cb14/likes
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzljODU3ZjU5MDRlYTQxMDdmOWRkYzUiLCJpYXQiOjE2NzEzODk3MTQsImV4cCI6MTY3MTk5NDUxNH0.4q__A536ay7_6VzwM-gZousd7Pw5eQ-WNeNqD9vNY8A
+
+###
+
+DELETE http://localhost:3000/cards/639c6219c2a24113573f2cef/likes
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzljNTljNDBiNGRmNWJhNmNiNjllYjMiLCJpYXQiOjE2NzExOTI1MDksImV4cCI6MTY3MTc5NzMwOX0.6PyIMweYs2gaZNABrG1xejPGXcNrZ6X7vRrseem-sww
+
+###
+
+GET http://localhost:3000/404
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzliMTEyM2RhN2Y0ZTM5MWQyYThiMzEiLCJpYXQiOjE2NzExMDg5MDcsImV4cCI6MTY3MTcxMzcwN30.7Nn3mqA8Wd3wsTF6BVuaKzAyj7r43qU51DAf7s69wac
+
+###
+
+PATCH http://localhost:3000/404
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzliMTEyM2RhN2Y0ZTM5MWQyYThiMzEiLCJpYXQiOjE2NzExMDg5MDcsImV4cCI6MTY3MTcxMzcwN30.7Nn3mqA8Wd3wsTF6BVuaKzAyj7r43qU51DAf7s69wac
+
+###

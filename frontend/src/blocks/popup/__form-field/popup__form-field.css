@@ -1,0 +1,11 @@
+.popup__form-field {
+  width: 100%;
+  min-height: 66px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.popup__form-field:nth-child(2) {
+  margin-bottom: 30px;
+}

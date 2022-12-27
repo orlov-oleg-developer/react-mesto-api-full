@@ -1,0 +1,9 @@
+@media screen and (max-width: 700px) {
+  .full-screen__close-button {
+    width: 20px;
+    height: 20px;
+
+    top: -36px;
+    right: 40px;
+  }
+}

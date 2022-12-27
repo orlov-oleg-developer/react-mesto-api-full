@@ -1,0 +1,8 @@
+.popup__image {
+  box-sizing: border-box;
+  margin: 0 0 32px;
+  width: 120px;
+  height: 120px;
+  object-position: center center;
+  object-fit: cover;
+}
