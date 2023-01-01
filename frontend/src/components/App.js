@@ -151,7 +151,7 @@ export default function App() {
       const data = await auth.getContent(token);
       if (!data) throw new Error('Неверный токен');
       localStorage.setItem('jwt', token);
-      setUserData(data.data.email);
+      setUserData(data.email);
       setIsLoggedIn(true);
       history.push('/')
     } catch (e) {
