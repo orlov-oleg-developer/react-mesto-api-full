@@ -1,9 +1,10 @@
 const express = require('express');
-var cors = require('cors')
+const cors = require('cors')
 const mongoose = require('mongoose');
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
 const { errors } = require('celebrate');
+const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const rootRoutes = require('./routes/index');
 const path = require("path");
@@ -21,12 +22,14 @@ const app = express();
 app.use(limiter);
 app.use(helmet());
 app.use(express.json());
-
+app.use(requestLogger);
 app.use(cors());
 
 app.use(express.static(path.join(__dirname, '../frontend/build')));
 
 app.use('/', rootRoutes);
+
+app.use(errorLogger);
 
 app.use(errors());
 
