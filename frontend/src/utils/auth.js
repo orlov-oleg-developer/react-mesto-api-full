@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://localhost:3000'
+export const BASE_URL = 'http://orlov.developer.nomoredomains.club'
 
 export const getContent = (token) => {
   return fetch(`${BASE_URL}/users/me`, {
