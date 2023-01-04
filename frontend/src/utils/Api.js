@@ -91,7 +91,7 @@ class Api {
 const token = localStorage.getItem('jwt');
 
 const api = new Api({
-  baseUrl: 'http://api.orlov.developer.nomoredomains.club',
+  baseUrl: 'https://api.orlov.developer.nomoredomains.club',
   headers: {
     authorization: `Bearer ${token}`,
     'Content-Type': 'application/json'

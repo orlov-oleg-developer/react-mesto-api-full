@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://api.orlov.developer.nomoredomains.club'
+export const BASE_URL = 'https://api.orlov.developer.nomoredomains.club'
 
 export const getContent = (token) => {
   return fetch(`${BASE_URL}/users/me`, {

@@ -1,14 +1,14 @@
-POST http://orlov.developer.nomoredomains.club/signup
+POST http://api.orlov.developer.nomoredomains.club/signup
 Content-Type: application/json
 
 {
-  "email": "1234213@yandex.ru",
+  "email": "1234@yandex.ru",
   "password": "test"
 }
 
 ###
 
-POST http://api.orlov.developer.nomoredomains.club/signin
+POST https://api.orlov.developer.nomoredomains.club/signin
 Content-Type: application/json
 
 {
