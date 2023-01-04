@@ -1,18 +1,18 @@
-POST http://localhost:3000/signup
+POST http://orlov.developer.nomoredomains.club/signup
 Content-Type: application/json
 
 {
-  "email": "123s4@yandex.ru",
-  "password": "123456789"
+  "email": "1234213@yandex.ru",
+  "password": "test"
 }
 
 ###
 
-POST http://localhost:3000/signin
+POST http://api.orlov.developer.nomoredomains.club/signin
 Content-Type: application/json
 
 {
-  "email": "123456@yandex.ru",
+  "email": "1234@yandex.ru",
   "password": "test"
 }
 
