@@ -101,7 +101,11 @@ export default function App() {
     const isLiked = card.likes.some(i => i._id === currentUser._id);
     api.changeLikeCardStatus(card._id, !isLiked)
       .then((newCard) => {
-        setCards((cards) => cards.map((c) => c._id === card._id ? newCard : c));
+        setCards(
+          (cards) => cards.map(
+            (c) => c._id === card._id ? newCard : c
+          )
+        );
       })
       .catch((err) => {
         console.log(err);
@@ -175,6 +179,7 @@ export default function App() {
     try {
       const token = await auth.authorize({ password, email });
       if (token) {
+        api.updateToken(token.token);
         cbAuthenticate(token.token);
       }
     } catch (e) {
@@ -219,7 +224,7 @@ export default function App() {
 
     api.getCards()
       .then((cardsData) => {
-        setCards(cardsData);
+        setCards(cardsData.reverse());
       })
       .catch((err) => {
         console.log(err);
@@ -244,6 +249,8 @@ export default function App() {
   useEffect(() => {
     cbTokenCheck();
   }, [cbTokenCheck]);
+
+  console.log(cards)
 
   return (
     <CurrentUserContext.Provider value={currentUser}>

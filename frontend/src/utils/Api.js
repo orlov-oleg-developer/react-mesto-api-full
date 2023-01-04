@@ -2,6 +2,11 @@ class Api {
   constructor(options) {
     this.url = options.baseUrl;
     this.headers = options.headers;
+    this.token = localStorage.getItem('jwt');
+    this.headers = {
+      ...this.headers,
+      authorization: `Bearer ${this.token}`
+    }
   }
 
   _checkResponse(res) {
@@ -86,14 +91,16 @@ class Api {
   changeLikeCardStatus(cardID, like) {
     return (like ? this.likeCard(cardID) : this.unLikeCard(cardID))
   }
+
+  updateToken(token) {
+    this.token = token;
+  }
 }
 
-const token = localStorage.getItem('jwt');
 
 const api = new Api({
   baseUrl: 'https://api.orlov.developer.nomoredomains.club',
   headers: {
-    authorization: `Bearer ${token}`,
     'Content-Type': 'application/json'
   }
 });
