@@ -1,4 +1,4 @@
-POST http://api.orlov.developer.nomoredomains.club/signup
+POST http://localhost:3000/signup
 Content-Type: application/json
 
 {
@@ -8,7 +8,7 @@ Content-Type: application/json
 
 ###
 
-POST https://api.orlov.developer.nomoredomains.club/signin
+POST http://localhost:3000/signin
 Content-Type: application/json
 
 {
@@ -20,7 +20,7 @@ Content-Type: application/json
 
 GET http://localhost:3000/users
 Accept: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2FhZDJhY2YzNzU0YzNkM2Y5ODcyOTMiLCJpYXQiOjE2NzIxMzk4NTEsImV4cCI6MTY3Mjc0NDY1MX0.wr4EpqXqtwa-fN_ybFbwhGYdAlL3LW4CQebJ2E6ZpcA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2I2OTNjY2NlYWM0OGZlNjU4ZmUzMTgiLCJpYXQiOjE2NzI5MDk3NzgsImV4cCI6MTY3MzUxNDU3OH0.RsAzpbY7qsy2vcbg4zWkyewtLqQ-ZNAov-ZzT46W7sg
 ###
 
 GET http://localhost:3000/users/me
