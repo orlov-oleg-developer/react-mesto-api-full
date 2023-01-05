@@ -94,6 +94,10 @@ class Api {
 
   updateToken(token) {
     this.token = token;
+    this.headers = {
+      ...this.headers,
+      authorization: `Bearer ${token}`
+    }
   }
 }
 
