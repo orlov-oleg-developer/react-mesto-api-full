@@ -61,11 +61,11 @@ const deleteCard = async (req, res, next) => {
   }
 };
 
-const updateCardLike = async (cardId, req, res, next) => {
+const updateCardLike = async (cardId, updateObj, req, res, next) => {
   try {
     const card = await Card.findByIdAndUpdate(
       cardId,
-      { $addToSet: { likes: req.user._id } },
+      updateObj,
       { new: true },
     ).populate(['owner', 'likes']);
 
@@ -85,13 +85,13 @@ const updateCardLike = async (cardId, req, res, next) => {
 const likeCard = async (req, res, next) => {
   const { cardId } = req.params;
 
-  await updateCardLike(cardId, req, res, next);
+  await updateCardLike(cardId, { $addToSet: { likes: req.user._id } }, req, res, next);
 };
 
 const deleteLike = async (req, res, next) => {
   const { cardId } = req.params;
 
-  await updateCardLike(cardId, req, res, next);
+  await updateCardLike(cardId, { $pull: { likes: req.user._id } }, req, res, next);
 };
 
 module.exports = {
