@@ -250,8 +250,6 @@ export default function App() {
     cbTokenCheck();
   }, [cbTokenCheck]);
 
-  console.log(cards)
-
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <IsLoadingContext.Provider value={isLoading}>

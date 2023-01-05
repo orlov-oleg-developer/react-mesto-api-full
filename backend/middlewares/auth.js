@@ -1,4 +1,7 @@
 const jwt = require('jsonwebtoken');
+require('dotenv').config();
+
+const { JWT_SECRET } = process.env;
 
 const NoAuthError = require('../errors/no-auth-error');
 
@@ -12,7 +15,7 @@ module.exports = (req, res, next) => {
     }
 
     const token = authorization.replace('Bearer ', '');
-    const payload = jwt.verify(token, 'some-secret-key');
+    const payload = jwt.verify(token, JWT_SECRET);
     req.user = payload;
     next();
   } catch (e) {
