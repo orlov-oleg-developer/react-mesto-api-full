@@ -107,12 +107,9 @@ const login = async (req, res, next) => {
   }
 };
 
-const updateUserInfo = async (req, res, next) => {
-  const userId = req.user._id;
-  const { name, about } = req.body;
-
+const updateUser = async (userId, info, res, next) => {
   try {
-    const user = await User.findByIdAndUpdate(userId, { name, about }, option);
+    const user = await User.findByIdAndUpdate(userId, info, option);
 
     checkUser(user);
 
@@ -123,24 +120,20 @@ const updateUserInfo = async (req, res, next) => {
     }
     return next(e);
   }
+}
+
+const updateUserInfo = async (req, res, next) => {
+  const userId = req.user._id;
+  const { name, about } = req.body;
+
+  await updateUser(userId, { name, about }, res, next);
 };
 
 const updateUserAvatar = async (req, res, next) => {
   const userId = req.user._id;
   const { avatar } = req.body;
 
-  try {
-    const user = await User.findByIdAndUpdate(userId, { avatar }, option);
-
-    checkUser(user);
-
-    return res.status(statusCode.success).send(user);
-  } catch (e) {
-    if (e instanceof mongoose.Error.ValidationError) {
-      return next(new BadRequestError());
-    }
-    return next(e);
-  }
+  await updateUser(userId, { avatar }, res, next);
 };
 
 module.exports = {

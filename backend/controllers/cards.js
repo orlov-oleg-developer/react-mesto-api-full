@@ -61,9 +61,7 @@ const deleteCard = async (req, res, next) => {
   }
 };
 
-const likeCard = async (req, res, next) => {
-  const { cardId } = req.params;
-
+const updateCardLike = async (cardId, req, res, next) => {
   try {
     const card = await Card.findByIdAndUpdate(
       cardId,
@@ -82,29 +80,18 @@ const likeCard = async (req, res, next) => {
     }
     return next(e);
   }
+}
+
+const likeCard = async (req, res, next) => {
+  const { cardId } = req.params;
+
+  await updateCardLike(cardId, req, res, next);
 };
 
 const deleteLike = async (req, res, next) => {
   const { cardId } = req.params;
 
-  try {
-    const card = await Card.findByIdAndUpdate(
-      cardId,
-      { $pull: { likes: req.user._id } },
-      { new: true },
-    ).populate(['owner', 'likes']);
-
-    if (card === null) {
-      throw new NotFoundError('Карточка с указанным _id не найдена');
-    }
-
-    return res.status(statusCode.success).json(card);
-  } catch (e) {
-    if (e instanceof mongoose.Error.CastError) {
-      return next(new BadRequestError());
-    }
-    return next(e);
-  }
+  await updateCardLike(cardId, req, res, next);
 };
 
 module.exports = {
