@@ -15,6 +15,12 @@ const usersRoutes = require('./users');
 const cardsRoutes = require('./cards');
 const NotFoundError = require('../errors/not-found-error');
 
+router.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
+
 router.post(
   '/signin',
   emailPasswordValidator,
