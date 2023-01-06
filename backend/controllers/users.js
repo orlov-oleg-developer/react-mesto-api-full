@@ -1,9 +1,8 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
-require('dotenv').config();
 
-const { NODE_ENV, JWT_SECRET } = process.env;
+const { JWT_SECRET } = require('../config/server-config');
 
 const User = require('../models/user');
 const NotFoundError = require('../errors/not-found-error');
@@ -97,7 +96,7 @@ const login = async (req, res, next) => {
 
     const token = jwt.sign(
       { _id: user._id },
-      NODE_ENV === 'production' ? JWT_SECRET : 'some-secret-key',
+      JWT_SECRET,
       { expiresIn: '7d' },
     );
 
@@ -120,7 +119,7 @@ const updateUser = async (userId, info, res, next) => {
     }
     return next(e);
   }
-}
+};
 
 const updateUserInfo = async (req, res, next) => {
   const userId = req.user._id;

@@ -80,7 +80,7 @@ const updateCardLike = async (cardId, updateObj, req, res, next) => {
     }
     return next(e);
   }
-}
+};
 
 const likeCard = async (req, res, next) => {
   const { cardId } = req.params;

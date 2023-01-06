@@ -36,10 +36,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzliMTEyM
 
 PATCH http://localhost:3000/users/me
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk4YzQ0ZDJhMTE2M2VkZWQwOTFlZDciLCJpYXQiOjE2NzA5NTk0MTAsImV4cCI6MTY3MTU2NDIxMH0.u-BNbVV7z_F2OOjCbF4BvplmkDYqD7ktcn5qSkrY5ho
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2I2OTNjY2NlYWM0OGZlNjU4ZmUzMTgiLCJpYXQiOjE2NzI5NDg5NzUsImV4cCI6MTY3MzU1Mzc3NX0.I8ZJCvtmI_G1dgP7XmddwY0-V8QmHfxlFs975JDyqH4
 
 {
-  "name": "О",
+  "name": "Оkt",
   "about": "Разработчик"
 }
 
@@ -47,7 +47,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk4YzQ0Z
 
 PATCH http://localhost:3000/users/me/avatar
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk4YmRhMTkzYzU4MGZmMjEyMmNlOGYiLCJpYXQiOjE2NzA5NTQ2MDcsImV4cCI6MTY3MTU1OTQwN30.FgVwygWgF2gxz6ZW5qvkvb5IejFStn93PzC0JZfKuoE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2I2OTNjY2NlYWM0OGZlNjU4ZmUzMTgiLCJpYXQiOjE2NzI5NDg5NzUsImV4cCI6MTY3MzU1Mzc3NX0.I8ZJCvtmI_G1dgP7XmddwY0-V8QmHfxlFs975JDyqH4
 
 {
   "avatar": "https://luxe-host.ru/wp-content/uploads/d/7/9/d7945aedae32bc4faa05246797a0adbb.jpeg"
@@ -78,15 +78,15 @@ Accept: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzljODU3ZjU5MDRlYTQxMDdmOWRkYzUiLCJpYXQiOjE2NzEzODY1MTYsImV4cCI6MTY3MTk5MTMxNn0.acqTS9GZmxy5ZP8VdU17p5mO-knTN8ogPlqKCAxzdP4
 ###
 
-PUT http://localhost:3000/cards/63a20a8a7a495f617252cb14/likes
+PUT http://localhost:3000/cards/63b17d8fa3159268dd5b5d5f/likes
 Accept: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzljODU3ZjU5MDRlYTQxMDdmOWRkYzUiLCJpYXQiOjE2NzEzODk3MTQsImV4cCI6MTY3MTk5NDUxNH0.4q__A536ay7_6VzwM-gZousd7Pw5eQ-WNeNqD9vNY8A
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2I2OTNjY2NlYWM0OGZlNjU4ZmUzMTgiLCJpYXQiOjE2NzI5NDg5NzUsImV4cCI6MTY3MzU1Mzc3NX0.I8ZJCvtmI_G1dgP7XmddwY0-V8QmHfxlFs975JDyqH4
 
 ###
 
-DELETE http://localhost:3000/cards/639c6219c2a24113573f2cef/likes
+DELETE http://localhost:3000/cards/63b17d8fa3159268dd5b5d5f/likes
 Accept: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzljNTljNDBiNGRmNWJhNmNiNjllYjMiLCJpYXQiOjE2NzExOTI1MDksImV4cCI6MTY3MTc5NzMwOX0.6PyIMweYs2gaZNABrG1xejPGXcNrZ6X7vRrseem-sww
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2I2OTNjY2NlYWM0OGZlNjU4ZmUzMTgiLCJpYXQiOjE2NzI5NDg5NzUsImV4cCI6MTY3MzU1Mzc3NX0.I8ZJCvtmI_G1dgP7XmddwY0-V8QmHfxlFs975JDyqH4
 
 ###
 
