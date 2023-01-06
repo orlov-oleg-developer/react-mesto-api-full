@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 const {
-  PORT,
+  PORT = 3000,
   NODE_ENV,
   MONGO_URL = 'mongodb://127.0.0.1:27017/mestodb',
 } = process.env;
